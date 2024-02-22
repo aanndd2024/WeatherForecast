@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+private let iconMap = [
+    "Drizzle" : "🌦️",
+    "ThunderStorm" : "⛈️",
+    "Snow" : "❄️",
+    "Rain" : "🌧️",
+    "Clear" : "☀️",
+    "Clouds" : "☁️"
+]
