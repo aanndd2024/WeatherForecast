@@ -10,7 +10,7 @@
 
 # WeatherForecast
 A simple app to hit the Open Weather Map API and show the weather data based on entered city name.
-Note: As of now only Indian city names are acceptable.
+<strong>Note:</strong> As of now only Indian city names are acceptable. Ex. Delhi, Pune, Kerla, Patna, Goa, Shimla, Jaipur, Manali etc
 
 # Description
 <p>The WeatherForecast project is a simple and straightforward weather forecast sample application.<br>
