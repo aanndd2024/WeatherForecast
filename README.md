@@ -36,6 +36,7 @@ You should see the content in tableView.<br></p>
 # Structure 
 * "Utility": Files or resources that are shared across multiple parts of the project. Such as utility classes, global constants, or reusable UI elements.
 * "Modules": The source code files for a specific module. Files within a module folder are organized into subfolders, such as "Views" or "Models".
+* "ViewModel": We have WeatherForecastViewModel class that encapsulates the business logic related to weather data. It interacts with the API Manager to fetch weather data of given city.
 * "Resources": Non-code files that are used by the project. These can include images, audio files, video files, and other types of assets. 
 * "APIManager": Files or classes related to communicating with an external API. This could include code for making HTTP requests to a web server, parsing responses, and handling any errors that may occur.
 
