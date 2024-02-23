@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class ViewController: UIViewController, WeatherForecastDelegate {
     @IBOutlet weak var txtCityName: UITextField!
@@ -41,9 +42,11 @@ class ViewController: UIViewController, WeatherForecastDelegate {
     }
     
     @IBAction func btnClickCheckWeather(_ sender: Any) {
+        ProgressHUD.animate("Loading...")
         if let cityName = txtCityName.text, cityName.isEmpty == false {
             Task { @MainActor in
                 let result:Result = await viewModel.fetchWeatherData(cityName: cityName)
+                ProgressHUD.dismiss()
                 switch result {
                   case .success(let weatherData):
                     viewModel.weatherData = weatherData
@@ -52,6 +55,7 @@ class ViewController: UIViewController, WeatherForecastDelegate {
                   }
             }
         } else {
+            ProgressHUD.dismiss()
             showError(error: DataError.invalidCityName)
         }
     }

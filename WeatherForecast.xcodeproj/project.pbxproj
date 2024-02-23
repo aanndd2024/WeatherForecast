@@ -23,6 +23,7 @@
 		9DE4C3602B862822006C186B /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE4C35F2B862822006C186B /* APIConstant.swift */; };
 		9DE4C3622B862833006C186B /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE4C3612B862833006C186B /* APIManager.swift */; };
 		9DE4C3652B868806006C186B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE4C3642B868806006C186B /* Utility.swift */; };
+		9DE4C36B2B88856A006C186B /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 9DE4C36A2B88856A006C186B /* ProgressHUD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DE4C36B2B88856A006C186B /* ProgressHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +230,9 @@
 			dependencies = (
 			);
 			name = WeatherForecast;
+			packageProductDependencies = (
+				9DE4C36A2B88856A006C186B /* ProgressHUD */,
+			);
 			productName = WeatherForecast;
 			productReference = 9DE4C31D2B85F260006C186B /* WeatherForecast.app */;
 			productType = "com.apple.product-type.application";
@@ -300,6 +305,9 @@
 				Base,
 			);
 			mainGroup = 9DE4C3142B85F260006C186B;
+			packageReferences = (
+				9DE4C3692B88856A006C186B /* XCRemoteSwiftPackageReference "ProgressHUD" */,
+			);
 			productRefGroup = 9DE4C31E2B85F260006C186B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -693,6 +701,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9DE4C3692B88856A006C186B /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/relatedcode/ProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9DE4C36A2B88856A006C186B /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DE4C3692B88856A006C186B /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			productName = ProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9DE4C3152B85F260006C186B /* Project object */;
 }
