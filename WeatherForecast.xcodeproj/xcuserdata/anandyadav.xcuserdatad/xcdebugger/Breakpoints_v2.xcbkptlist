@@ -5,49 +5,61 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
-            uuid = "9E49355C-6844-4722-8A44-A26E42C3F6B1"
+            uuid = "571603DF-4C6B-4687-A813-3A6E48271F42"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeatherForecast/Controller/ViewController.swift"
+            breakpointStackSelectionBehavior = "1"
+            scope = "1"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E71F945C-E8F1-4416-9281-59069FA28865"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeatherForecast/APIManager/APIManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "reloadData()"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "getWeatherData(type:cityName:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "9E49355C-6844-4722-8A44-A26E42C3F6B1 - f92466ff7079cbf5"
+                  uuid = "E71F945C-E8F1-4416-9281-59069FA28865 - ec80f39af645beb5"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "WeatherForecast.ViewController.reloadData() -&gt; ()"
+                  symbolName = "(3) suspend resume partial function for WeatherForecast.APIManager.getWeatherData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_0_0, WeatherForecast.DataError&gt;"
                   moduleName = "WeatherForecast"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/anandyadav/Documents/Assignment/WeatherForecast/WeatherForecast/Controller/ViewController.swift"
+                  urlString = "file:///Users/anandyadav/Documents/Assignment/WeatherForecast/WeatherForecast/APIManager/APIManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "16">
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "1296">
                </Location>
                <Location
-                  uuid = "9E49355C-6844-4722-8A44-A26E42C3F6B1 - f92466ff7079cbf5"
+                  uuid = "E71F945C-E8F1-4416-9281-59069FA28865 - ec80f39af645beda"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "WeatherForecast.ViewController.reloadData() -&gt; ()"
+                  symbolName = "(3) suspend resume partial function for WeatherForecast.APIManager.getWeatherData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_0_0, WeatherForecast.DataError&gt;"
                   moduleName = "WeatherForecast"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/anandyadav/Documents/Assignment/WeatherForecast/WeatherForecast/Controller/ViewController.swift"
+                  urlString = "file:///Users/anandyadav/Documents/Assignment/WeatherForecast/WeatherForecast/APIManager/APIManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "96">
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "1296">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -55,17 +67,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D6B69037-4B62-44A4-88DB-AA15FC307CC7"
+            uuid = "C432D53B-5FFD-4970-AE7E-41AA9ED12DAF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeatherForecast/ViewModel/WeatherForecastViewModel.swift"
+            filePath = "WeatherForecast/APIManager/APIManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "fetchWeatherData()"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "getWeatherData(type:cityName:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C432D53B-5FFD-4970-AE7E-41AA9ED12DAF - ec80f39af645bd18"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for WeatherForecast.APIManager.getWeatherData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_0_0, WeatherForecast.DataError&gt;"
+                  moduleName = "WeatherForecast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anandyadav/Documents/Assignment/WeatherForecast/WeatherForecast/APIManager/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "1060">
+               </Location>
+               <Location
+                  uuid = "C432D53B-5FFD-4970-AE7E-41AA9ED12DAF - ec80f39af645bd39"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for WeatherForecast.APIManager.getWeatherData&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(type: &#x3c4;_0_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_0_0, WeatherForecast.DataError&gt;"
+                  moduleName = "WeatherForecast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/anandyadav/Documents/Assignment/WeatherForecast/WeatherForecast/APIManager/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "1060">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

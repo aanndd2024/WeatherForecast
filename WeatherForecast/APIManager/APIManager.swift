@@ -11,27 +11,35 @@ enum DataError: Error {
     case invalidResponse
     case invalidURL
     case invalidData
+    case invalidCityName
     case network(Error?)
 }
-
 class APIManager {
-    func getWeatherData<T: Decodable>() async throws ->  T {
-        guard let url = URL(string: getURLString()) else {
-            throw DataError.invalidURL
+    
+    func getWeatherData<T: Decodable>(type: T.Type, cityName:String) async ->  Result<T, DataError> {
+        guard let url = URL(string: getURLString(cityName: cityName)) else {
+            return .failure(DataError.invalidURL)
         }
         var request = URLRequest(url: url)
         request.httpMethod = "get"
-
-        let (data, response) = try await URLSession.shared.data(for: request)
-
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-            throw DataError.invalidResponse
+        
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request, delegate: nil)
+            guard let response = response as? HTTPURLResponse else {
+                return .failure(.invalidResponse)
+            }
+            guard response.statusCode == 200 else {
+                return .failure(DataError.invalidResponse)
+            }
+            let decodedResponse = try JSONDecoder().decode(type, from: data)
+            return .success(decodedResponse)
+        } catch {
+            return .failure(.invalidData)
         }
-        return try JSONDecoder().decode(T.self, from: data)
     }
     
-    func getURLString() -> String {
-        let urlPath = baseURL + weatherForecastURl + "?q=vadodara,IN&APPID=\(apiKey)"
+    func getURLString(cityName:String) -> String {
+        let urlPath = baseURL + weatherForecastURl + "?q=\(cityName),IN&APPID=\(apiKey)"
         return urlPath
     }
 }

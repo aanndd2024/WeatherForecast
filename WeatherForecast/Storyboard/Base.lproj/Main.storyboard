@@ -154,8 +154,8 @@
                                     <constraint firstAttribute="width" constant="10" id="ZFn-es-rgI"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Weather data available. Check City Name!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oE-N9-t1w">
-                                <rect key="frame" x="17.666666666666657" y="226" width="357.66666666666674" height="20.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Weather data available. Check City Name!!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oE-N9-t1w">
+                                <rect key="frame" x="15" y="226" width="363" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -166,6 +166,7 @@
                         <constraints>
                             <constraint firstItem="oL0-We-M1v" firstAttribute="leading" secondItem="K3Y-Pu-ofe" secondAttribute="trailing" constant="30" id="7Gu-C7-ju6"/>
                             <constraint firstItem="oL0-We-M1v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ABm-08-jS9"/>
+                            <constraint firstItem="5oE-N9-t1w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="BVR-5G-gRN"/>
                             <constraint firstItem="5oE-N9-t1w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HWh-kr-dHs"/>
                             <constraint firstItem="5oE-N9-t1w" firstAttribute="top" secondItem="lw5-NX-ltm" secondAttribute="bottom" constant="8" symbolic="YES" id="Hac-VD-ai7"/>
                             <constraint firstItem="lw5-NX-ltm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jt9-7C-neQ"/>
@@ -178,6 +179,7 @@
                             <constraint firstItem="qmn-ac-AaZ" firstAttribute="top" secondItem="K3Y-Pu-ofe" secondAttribute="bottom" constant="70" id="fn7-JL-djg"/>
                             <constraint firstItem="qmn-ac-AaZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="obB-Z5-MxA"/>
                             <constraint firstItem="Ied-zh-hBt" firstAttribute="centerY" secondItem="K3Y-Pu-ofe" secondAttribute="centerY" id="qZ4-3b-gZT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5oE-N9-t1w" secondAttribute="trailing" constant="15" id="ver-3N-jEw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="u9c-Yy-XZH"/>
@@ -191,6 +193,7 @@
                         <outlet property="lblWeatherError" destination="5oE-N9-t1w" id="vyS-mG-gCl"/>
                         <outlet property="lblWindSpeed" destination="H8e-ft-TLk" id="liT-cO-EX5"/>
                         <outlet property="txtCityName" destination="mej-Nl-2Qa" id="vwk-SM-lyE"/>
+                        <outlet property="weatherInfoContainer" destination="qmn-ac-AaZ" id="Zdf-vY-5gv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

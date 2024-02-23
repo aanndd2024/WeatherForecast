@@ -8,7 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController, WeatherForecastDelegate {
-    
     @IBOutlet weak var txtCityName: UITextField!
     @IBOutlet weak var imgViewWeatherDesc: UIImageView!
     @IBOutlet weak var lblTemperture: UILabel!
@@ -18,6 +17,7 @@ class ViewController: UIViewController, WeatherForecastDelegate {
     @IBOutlet weak var lblHumidity: UILabel!
     @IBOutlet weak var lblWindSpeed: UILabel!
     @IBOutlet weak var lblWeatherError: UILabel!
+    @IBOutlet weak var weatherInfoContainer: UIStackView!
     
     private let viewModel = WeatherForecastViewModel()
     var weatherData: WeatherData!
@@ -33,7 +33,6 @@ class ViewController: UIViewController, WeatherForecastDelegate {
     }
     
     func reloadData() {
-        txtCityName.text = ""
         if viewModel.weatherData != nil {
             setUpViews()
         } else {
@@ -42,28 +41,41 @@ class ViewController: UIViewController, WeatherForecastDelegate {
     }
     
     @IBAction func btnClickCheckWeather(_ sender: Any) {
-        viewModel.fetchWeatherData()
+        if let cityName = txtCityName.text, cityName.isEmpty == false {
+            Task { @MainActor in
+                let result:Result = await viewModel.fetchWeatherData(cityName: cityName)
+                switch result {
+                  case .success(let weatherData):
+                    viewModel.weatherData = weatherData
+                  case .failure(let error):
+                    showError(error: error)
+                  }
+            }
+        } else {
+            showError(error: DataError.invalidCityName)
+        }
+    }
+    
+    func showError(error :Error) {
+        hideViews()
+        lblWeatherError.isHidden = false
+        lblWeatherError.text = error.localizedDescription
     }
     
     func hideViews() {
+        weatherInfoContainer.isHidden = true
         imgViewWeatherDesc.isHidden = true
         lblWeatherDesc.isHidden = true
         lblTemperture.isHidden = true
-        lblSunriseTime.isHidden = true
-        lblSunsetTime.isHidden = true
-        lblHumidity.isHidden = true
-        lblWindSpeed.isHidden = true
         lblWeatherError.isHidden = true
     }
     
     func setUpViews() {
+        weatherInfoContainer.isHidden = false
+        lblWeatherError.isHidden = true
         imgViewWeatherDesc.isHidden = false
         lblWeatherDesc.isHidden = false
         lblTemperture.isHidden = false
-        lblSunriseTime.isHidden = false
-        lblSunsetTime.isHidden = false
-        lblHumidity.isHidden = false
-        lblWindSpeed.isHidden = false
         imgViewWeatherDesc.image = UIImage(systemName:Helper.getImageName(desc: viewModel.weatherData?.weather?.first?.description))
         imgViewWeatherDesc.tintColor = .systemBrown
         lblWeatherDesc.text = viewModel.weatherData?.weather?.first?.description
