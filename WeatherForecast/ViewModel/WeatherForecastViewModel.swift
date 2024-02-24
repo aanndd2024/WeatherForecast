@@ -12,13 +12,13 @@ protocol WeatherForecastDelegate: AnyObject {
 }
 
 class WeatherForecastViewModel {
+    weak var weatherDelegate: WeatherForecastDelegate?
     var weatherData: WeatherData? {
         didSet {
             self.weatherDelegate?.reloadData()
         }
     }
     private var manager = APIManager()
-    weak var weatherDelegate: WeatherForecastDelegate?
     
     func fetchWeatherData(cityName:String) async -> Result<WeatherData, DataError> {
         let result: Result = await manager.getWeatherData(type: WeatherData.self, cityName:cityName)

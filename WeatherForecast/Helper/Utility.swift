@@ -43,10 +43,6 @@ class Helper {
         formatter.dateStyle = .none
         formatter.timeStyle = .short
         return formatter.string(from: Date(timeIntervalSince1970: TimeInterval(sunrise)))
-        //string(from: Date(timeIntervalSince1970: TimeInterval(sunrise))) // October 8, 2016 at 10:48:53 PM
-
-        //return Date(timeIntervalSince1970: TimeInterval(sunrise))
-
     }
 }
 

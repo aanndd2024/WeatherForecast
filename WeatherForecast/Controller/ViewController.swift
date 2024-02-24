@@ -84,10 +84,10 @@ class ViewController: UIViewController, WeatherForecastDelegate {
         imgViewWeatherDesc.tintColor = .systemBrown
         lblWeatherDesc.text = viewModel.weatherData?.weather?.first?.description
         lblTemperture.text = Helper.getCelsius(valueInKelvin: viewModel.weatherData?.main?.temp)
-        lblSunriseTime.text = Helper.getTimeFromInt(sunrise: (viewModel.weatherData?.sys?.sunrise)!)
-        lblSunsetTime.text = Helper.getTimeFromInt(sunrise: (viewModel.weatherData?.sys?.sunset)!)
-        lblHumidity.text = String(format:"%d",((viewModel.weatherData?.main?.humidity)!)) + " %"
-        lblWindSpeed.text =  String(format:"%.0f",(((viewModel.weatherData?.wind?.speed!)! * 1.60934))) + " km/h"
+        lblSunriseTime.text = Helper.getTimeFromInt(sunrise: (viewModel.weatherData?.sys?.sunrise) ?? 0)
+        lblSunsetTime.text = Helper.getTimeFromInt(sunrise: (viewModel.weatherData?.sys?.sunset) ?? 0)
+        lblHumidity.text = String(format:"%d",((viewModel.weatherData?.main?.humidity) ?? 0)) + " %"
+        lblWindSpeed.text =  String(format:"%.0f",((viewModel.weatherData?.wind?.speed) ?? 0 * 1.60934)) + " km/h"
     }
     
 

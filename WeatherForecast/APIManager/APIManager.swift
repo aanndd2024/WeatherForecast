@@ -14,6 +14,19 @@ enum DataError: Error {
     case invalidCityName
     case network(Error?)
 }
+
+extension DataError:LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .invalidResponse: return "Something went wrong!"
+        case .invalidURL: return "Invalid URL"
+        case .invalidData: return "Something went wrong!"
+        case .invalidCityName: return "Enter correct city name(India's Only)"
+        case .network: return ""
+        }
+    }
+}
+
 class APIManager {
     
     func getWeatherData<T: Decodable>(type: T.Type, cityName:String) async ->  Result<T, DataError> {
