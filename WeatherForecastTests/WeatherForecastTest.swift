@@ -21,8 +21,8 @@ final class WeatherForecastTest: XCTestCase {
         super.tearDown()
     }
     
-    func testFetchPostListFailure() async {
-        let result:Result = await viewModel.fetchWeatherData(cityName: "Delahi")
+    func testFetchWeatherDataFailure() async {
+        let result:Result = await viewModel.fetchWeatherData(cityName: "Invalid City Name")
         switch result {
         case .success(let weatherData):
             XCTAssertNotNil(weatherData)
